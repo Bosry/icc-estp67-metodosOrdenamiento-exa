@@ -18,34 +18,31 @@ public class Brand {
     }
 
     public CarModel getModelByName(String name) {
-        if (models == null)
-            return null;
+        if (models == null) return null;
+
         for (CarModel model : models) {
             if (model.getModelName().equalsIgnoreCase(name)) {
                 return model;
             }
         }
+
         return null;
     }
 
     public int getTotalValidYears() {
         int total = 0;
 
-        if (models == null)
-            return 0;
+        if (models == null) return 0;
 
         for (CarModel model : models) {
-            if (model == null || model.getYears() == null)
-                continue;
+            if (model.getYears() == null) continue;
 
             for (CarYear year : model.getYears()) {
-                if (year != null && year.isAviable()) {
+                if (year.isAviable()) {
                     total++;
                 }
             }
         }
-
         return total;
     }
-
 }

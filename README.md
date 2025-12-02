@@ -217,7 +217,33 @@ No encontrada
 **INSTRUCCIONES**: Ejecute `App.java` y copie TODA la salida de consola aquí (Ctrl+C / Ctrl+V):
 
 ```
-[COPIE AQUÍ LA SALIDA COMPLETA DE LA CONSOLA]
+Examen interciclo de Estructuras de Datos
+Bryan Santos
+-- LISTA ORIGINAL --
+Honda - Años válidos: 6
+Toyota - Años válidos: 10
+Ford - Años válidos: 5
+Chevrolet - Años válidos: 8
+Nissan - Años válidos: 7
+Mazda - Años válidos: 12
+Hyundai - Años válidos: 8
+
+-- ORDENADO POR SELECTION SORT DESCENDENTE --
+Mazda - Años válidos: 12
+Toyota - Años válidos: 10
+Chevrolet - Años válidos: 8
+Hyundai - Años válidos: 8
+Nissan - Años válidos: 7
+Honda - Años válidos: 6
+Ford - Años válidos: 5
+
+-- BÚSQUEDA BINARIA (8 años, desc) --
+Encontrada: Hyundai - Total de años válidos: 8
+
+-- BÚSQUEDA BINARIA (10 años, desc) --
+Encontrada: Toyota - Total de años válidos: 10
+
+-- FIN DE EJECUCIÓN --
 ```
 
 ---
