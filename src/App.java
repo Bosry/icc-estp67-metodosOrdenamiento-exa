@@ -8,10 +8,10 @@ public class App {
         System.out.println("Examen interciclo de Estructuras de Datos");
         System.out.println("====Configurar studente.env====");
         System.out.println("Original: ");
-BrandController controller = new BrandController();
-
+        BrandController controller = new BrandController();
+        TestData testData = new TestData();
         // cargar datos de prueba
-        Brand[] brands = TestData.createBrands();
+        Brand[] brands = testData.createBrands();
 
         System.out.println("=== LISTA ORIGINAL ===");
         controller.printBrands(brands);
