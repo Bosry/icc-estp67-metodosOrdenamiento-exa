@@ -1,7 +1,7 @@
 package test;
 
 import controllers.BrandController;
-import models.Brand;
+import models.brandName;
 import validaciones.Validators;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,9 +37,9 @@ public class BrandControllerTest {
     /**
      * Invoca un método por reflexión y maneja errores si no existe
      */
-    private void invocarMetodoOrdenamiento(String nombreMetodo, Brand[] paraOrdenar) {
+    private void invocarMetodoOrdenamiento(String nombreMetodo, brandName[] paraOrdenar) {
         try {
-            Method metodo = BrandController.class.getMethod(nombreMetodo, Brand[].class);
+            Method metodo = BrandController.class.getMethod(nombreMetodo, brandName[].class);
             metodo.invoke(controller, (Object) paraOrdenar);
         } catch (NoSuchMethodException e) {
             org.junit.jupiter.api.Assertions.fail(
@@ -54,11 +54,11 @@ public class BrandControllerTest {
     /**
      * Invoca el método de búsqueda binaria por reflexión
      */
-    private Brand invocarBusquedaBinaria(Brand[] paraOrdenar, int validYears, boolean isAscending) {
+    private brandName invocarBusquedaBinaria(brandName[] paraOrdenar, int validYears, boolean isAscending) {
         try {
             Method metodo = BrandController.class.getMethod("binarySearchByValidYears",
-                    Brand[].class, int.class, boolean.class);
-            return (Brand) metodo.invoke(controller, paraOrdenar, validYears, isAscending);
+                    brandName[].class, int.class, boolean.class);
+            return (brandName) metodo.invoke(controller, paraOrdenar, validYears, isAscending);
         } catch (NoSuchMethodException e) {
             org.junit.jupiter.api.Assertions.fail(
                     "ERROR: El método 'binarySearchByValidYears(Brand[], int, boolean)' no existe en BrandController.\n"
@@ -93,7 +93,7 @@ public class BrandControllerTest {
     @DisplayName("Test 1: Validar getTotalValidYears() - Cálculo de años válidos")
     public void testGetTotalValidYears() {
         // Obtener datos de prueba
-        Brand[] brands = TestData.createBrands();
+        brandName[] brands = TestData.createBrands();
 
         // Validar el cálculo de años válidos usando el validador
         Validators.validarCalculoTotalValidYears(brands);
@@ -105,8 +105,8 @@ public class BrandControllerTest {
         String fila = FILA_ESTUDIANTE.trim().toUpperCase();
 
         // Obtener datos originales
-        Brand[] original = TestData.createBrands();
-        Brand[] paraOrdenar = Validators.copiarArregloBrands(original);
+        brandName[] original = TestData.createBrands();
+        brandName[] paraOrdenar = Validators.copiarArregloBrands(original);
 
         // Ejecutar ordenamiento según la fila usando reflexión
         if (fila.equals("A")) {
@@ -145,19 +145,19 @@ public class BrandControllerTest {
         String fila = FILA_ESTUDIANTE.trim().toUpperCase();
 
         // Obtener datos originales
-        Brand[] brands = TestData.createBrands();
-        Brand[] paraOrdenar = Validators.copiarArregloBrands(brands);
+        brandName[] brands = TestData.createBrands();
+        brandName[] paraOrdenar = Validators.copiarArregloBrands(brands);
 
         if (fila.equals("A")) {
             // Fila A: Selection Sort Descendente
             invocarMetodoOrdenamiento("sortSelectionDesc", paraOrdenar);
 
             // Búsqueda 1: 8 años (existe) - ordenado descendente
-            Brand resultado1 = invocarBusquedaBinaria(paraOrdenar, 8, false);
+            brandName resultado1 = invocarBusquedaBinaria(paraOrdenar, 8, false);
             Validators.validarBusquedaExitosa(resultado1, 8);
 
             // Búsqueda 2: 10 años (no existe) - ordenado descendente
-            Brand resultado2 = invocarBusquedaBinaria(paraOrdenar, 10, false);
+            brandName resultado2 = invocarBusquedaBinaria(paraOrdenar, 10, false);
             Validators.validarBusquedaFallida(resultado2, 10);
 
         } else if (fila.equals("B")) {
@@ -165,11 +165,11 @@ public class BrandControllerTest {
             invocarMetodoOrdenamiento("sortSelectionAsc", paraOrdenar);
 
             // Búsqueda 1: 7 años (existe) - ordenado ascendente
-            Brand resultado1 = invocarBusquedaBinaria(paraOrdenar, 7, true);
+            brandName resultado1 = invocarBusquedaBinaria(paraOrdenar, 7, true);
             Validators.validarBusquedaExitosa(resultado1, 7);
 
             // Búsqueda 2: 5 años (no existe) - ordenado ascendente
-            Brand resultado2 = invocarBusquedaBinaria(paraOrdenar, 5, true);
+            brandName resultado2 = invocarBusquedaBinaria(paraOrdenar, 5, true);
             Validators.validarBusquedaFallida(resultado2, 5);
 
         } else if (fila.equals("C")) {
@@ -177,11 +177,11 @@ public class BrandControllerTest {
             invocarMetodoOrdenamiento("sortInsertionDesc", paraOrdenar);
 
             // Búsqueda 1: 6 años (existe) - ordenado descendente
-            Brand resultado1 = invocarBusquedaBinaria(paraOrdenar, 6, false);
+            brandName resultado1 = invocarBusquedaBinaria(paraOrdenar, 6, false);
             Validators.validarBusquedaExitosa(resultado1, 6);
 
             // Búsqueda 2: 9 años (no existe) - ordenado descendente
-            Brand resultado2 = invocarBusquedaBinaria(paraOrdenar, 9, false);
+            brandName resultado2 = invocarBusquedaBinaria(paraOrdenar, 9, false);
             Validators.validarBusquedaFallida(resultado2, 9);
 
         } else if (fila.equals("D")) {
@@ -189,11 +189,11 @@ public class BrandControllerTest {
             invocarMetodoOrdenamiento("sortBubbleDesc", paraOrdenar);
 
             // Búsqueda 1: 7 años (existe) - ordenado descendente
-            Brand resultado1 = invocarBusquedaBinaria(paraOrdenar, 7, false);
+            brandName resultado1 = invocarBusquedaBinaria(paraOrdenar, 7, false);
             Validators.validarBusquedaExitosa(resultado1, 7);
 
             // Búsqueda 2: 4 años (no existe) - ordenado descendente
-            Brand resultado2 = invocarBusquedaBinaria(paraOrdenar, 4, false);
+            brandName resultado2 = invocarBusquedaBinaria(paraOrdenar, 4, false);
             Validators.validarBusquedaFallida(resultado2, 4);
         }
     }
