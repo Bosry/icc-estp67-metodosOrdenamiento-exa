@@ -2,20 +2,19 @@ package models;
 
 public class CarModel {
 
-    private String brandName;
+    private String modelName;
     private CarYear[] years;
 
-    public CarModel (String brandName, CarYear[] years){
-        this.brandName = brandName;
+    public CarModel(String modelName, CarYear[] years) {
+        this.modelName = modelName;
         this.years = years;
     }
 
-    public String getName(){
-        return "";
+    public String getModelName() {
+        return this.modelName;
     }
-    
 
-    public CarYear[] getYears(){
-        return null;
+    public CarYear[] getYears() {
+        return this.years;
     }
 }

@@ -7,10 +7,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Examen interciclo de Estructuras de Datos");
         System.out.println("====Configurar studente.env====");
-        System.out.println("Original: ");
         BrandController controller = new BrandController();
         TestData testData = new TestData();
-        // cargar datos de prueba
         Brand[] brands = testData.createBrands();
 
         System.out.println("=== LISTA ORIGINAL ===");
