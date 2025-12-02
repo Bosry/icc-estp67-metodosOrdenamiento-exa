@@ -2,7 +2,7 @@ package test;
 
 import models.CarModel;
 import models.CarYear;
-import models.Brand;
+import models.brandName;
 
 public class TestData {
 
@@ -11,7 +11,7 @@ public class TestData {
      * 
      * @return Arreglo de marcas con modelos y años
      */
-    public static Brand[] createBrands() {
+    public static brandName[] createBrands() {
         // ===== HONDA =====
         CarYear[] civicYears = {
                 new CarYear(2018, false),
@@ -36,7 +36,7 @@ public class TestData {
                 new CarModel("Accord", accordYears)
         };
 
-        Brand honda = new Brand("Honda", hondaModels);
+        brandName honda = new brandName("Honda", hondaModels);
 
         // ===== TOYOTA =====
         CarYear[] corollaYears = {
@@ -63,7 +63,7 @@ public class TestData {
                 new CarModel("Camry", camryYears)
         };
 
-        Brand toyota = new Brand("Toyota", toyotaModels);
+        brandName toyota = new brandName("Toyota", toyotaModels);
 
         // ===== FORD =====
         CarYear[] mustangYears = {
@@ -90,7 +90,7 @@ public class TestData {
                 new CarModel("F-150", f150Years)
         };
 
-        Brand ford = new Brand("Ford", fordModels);
+        brandName ford = new brandName("Ford", fordModels);
 
         // ===== CHEVROLET =====
         CarYear[] silveradoYears = {
@@ -117,7 +117,7 @@ public class TestData {
                 new CarModel("Camaro", camaroYears)
         };
 
-        Brand chevrolet = new Brand("Chevrolet", chevroletModels);
+        brandName chevrolet = new brandName("Chevrolet", chevroletModels);
 
         // ===== NISSAN =====
         CarYear[] altimaYears = {
@@ -144,7 +144,7 @@ public class TestData {
                 new CarModel("Sentra", sentraYears)
         };
 
-        Brand nissan = new Brand("Nissan", nissanModels);
+        brandName nissan = new brandName("Nissan", nissanModels);
 
         // ===== MAZDA =====
         CarYear[] mazda3Years = {
@@ -171,7 +171,7 @@ public class TestData {
                 new CarModel("CX-5", cx5Years)
         };
 
-        Brand mazda = new Brand("Mazda", mazdaModels);
+        brandName mazda = new brandName("Mazda", mazdaModels);
 
         // ===== HYUNDAI =====
         CarYear[] elantraYears = {
@@ -198,8 +198,8 @@ public class TestData {
                 new CarModel("Tucson", tucsonYears)
         };
 
-        Brand hyundai = new Brand("Hyundai", hyundaiModels);
+        brandName hyundai = new brandName("Hyundai", hyundaiModels);
 
-        return new Brand[] { honda, toyota, ford, chevrolet, nissan, mazda, hyundai };
+        return new brandName[] { honda, toyota, ford, chevrolet, nissan, mazda, hyundai };
     }
 }

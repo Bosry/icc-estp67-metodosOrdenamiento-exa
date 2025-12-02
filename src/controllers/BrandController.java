@@ -1,12 +1,12 @@
 package controllers;
 
-import models.Brand;
+import models.brandName;
 
 public class BrandController {
     public BrandController(){
 
     }
-    public Brand[] sortSelectionDesc(Brand[] brands) {
+    public brandName[] sortSelectionDesc(brandName[] brands) {
         int n = brands.length;
 
         for (int i = 0; i < n - 1; i++) {
@@ -18,15 +18,15 @@ public class BrandController {
                 }
             }
 
-            Brand temp = brands[i];
+            brandName temp = brands[i];
             brands[i] = brands[maxIndex];
             brands[maxIndex] = temp;
         }
         return brands;
     }
 
-    public Brand binarySearchByValidYears(
-            Brand[] brands,
+    public brandName binarySearchByValidYears(
+            brandName[] brands,
             int validYears,
             boolean isAscending) {
 
@@ -59,9 +59,9 @@ public class BrandController {
         return null;
     }
 
-    public void printBrands(Brand[] brands) {
-        for (Brand b : brands) {
-            System.out.println(b.getName() + " - Años válidos: " + b.getTotalValidYears());
+    public void printBrands(brandName[] brands) {
+        for (brandName b : brands) {
+            System.out.println(b.getBrandName() + " - Años válidos: " + b.getTotalValidYears());
         }
     }
 

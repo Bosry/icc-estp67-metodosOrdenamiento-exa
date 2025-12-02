@@ -1,5 +1,5 @@
 import controllers.BrandController;
-import models.Brand;
+import models.brandName;
 import test.TestData;
 
 public class App {
@@ -9,7 +9,7 @@ public class App {
         System.out.println("Bryan Santos");
         BrandController controller = new BrandController();
         TestData testData = new TestData();
-        Brand[] brands = testData.createBrands();
+        brandName[] brands = testData.createBrands();
 
         System.out.println("-- LISTA ORIGINAL --");
         controller.printBrands(brands);
@@ -19,18 +19,18 @@ public class App {
         controller.printBrands(brands);
 
         System.out.println("\n-- BÚSQUEDA BINARIA (8 años, desc) --");
-        Brand b1 = controller.binarySearchByValidYears(brands, 8, false);
+        brandName b1 = controller.binarySearchByValidYears(brands, 8, false);
         if (b1 != null) {
-            System.out.println("Encontrada: " + b1.getName() +
+            System.out.println("Encontrada: " + b1.getBrandName() +
                     " - Total de años válidos: " + b1.getTotalValidYears());
         } else {
             System.out.println("No encontrada");
         }
 
         System.out.println("\n-- BÚSQUEDA BINARIA (10 años, desc) --");
-        Brand b2 = controller.binarySearchByValidYears(brands, 10, false);
+        brandName b2 = controller.binarySearchByValidYears(brands, 10, false);
         if (b2 != null) {
-            System.out.println("Encontrada: " + b2.getName() +
+            System.out.println("Encontrada: " + b2.getBrandName() +
                     " - Total de años válidos: " + b2.getTotalValidYears());
         } else {
             System.out.println("No encontrada");
